@@ -4,39 +4,321 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Política de Privacidad - Finanzas Pro</title>
+  <meta name="description" content="Política de Privacidad de Finanzas Pro.">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: rgba(255, 255, 255, 0.82);
+      --text: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.08);
+      --accent: #0a84ff;
+      --accent-2: #2563eb;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(10,132,255,0.10), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.70);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 24px rgba(37,99,235,0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background: rgba(10,132,255,0.08);
+      color: var(--accent-2);
+    }
+
+    .hero {
+      padding: 48px 0 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,132,255,0.08);
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin: 22px 0 42px;
+    }
+
+    .section + .section {
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.28rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0 20px;
+      color: var(--muted);
+      padding: 0;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 0 0 46px;
+    }
+
+    .footer-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        padding: 24px;
+        border-radius: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Política de Privacidad – Finanzas Pro</h1>
-  <p>Última actualización: 01 de abril 2026</p>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo">F</span>
+        <span>Finanzas Pro</span>
+      </a>
 
-  <p>En Finanzas Pro valoramos tu privacidad. Esta aplicación está diseñada para ayudarte a gestionar ingresos, gastos, deudas e inversiones de forma personal.</p>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="privacy.html" aria-current="page">Privacidad</a>
+        <a href="support.html">Soporte</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>1. Datos que se procesan</h2>
-  <p>Finanzas Pro permite registrar información financiera que tú ingresas (por ejemplo: movimientos, montos, categorías, deudas, inversiones y configuraciones).</p>
-  <p>Estos datos se almacenan en tu dispositivo y, si tienes iCloud habilitado, pueden sincronizarse mediante los servicios de Apple (CloudKit) asociados a tu cuenta.</p>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">Documento informativo</div>
+      <h1>Política de Privacidad</h1>
+      <p class="subtitle">Última actualización: 01 de abril de 2026</p>
+    </section>
 
-  <h2>2. Notificaciones</h2>
-  <p>Si activas recordatorios de pago, la app solicita permiso para enviarte notificaciones locales.</p>
-  <p>Puedes desactivarlas en cualquier momento desde la app o desde Ajustes del sistema.</p>
+    <section class="card">
+      <div class="section">
+        <p>
+          En <strong>Finanzas Pro</strong> valoramos tu privacidad. Esta aplicación está diseñada
+          para ayudarte a gestionar ingresos, gastos, deudas e inversiones de forma personal.
+        </p>
+      </div>
 
-  <h2>3. Compartición de datos</h2>
-  <p>Finanzas Pro no vende tus datos ni los comparte con terceros para fines publicitarios.</p>
-  <p>La app no requiere crear una cuenta propia externa.</p>
+      <div class="section">
+        <h2>1. Datos que se procesan</h2>
+        <p>
+          Finanzas Pro permite registrar información financiera que tú ingresas, por ejemplo:
+        </p>
+        <ul>
+          <li>Movimientos</li>
+          <li>Montos</li>
+          <li>Categorías</li>
+          <li>Deudas</li>
+          <li>Inversiones</li>
+          <li>Configuraciones</li>
+        </ul>
+        <p style="margin-top: 12px;">
+          Estos datos se almacenan en tu dispositivo y, si tienes iCloud habilitado, pueden
+          sincronizarse mediante los servicios de Apple (CloudKit) asociados a tu cuenta.
+        </p>
+      </div>
 
-  <h2>4. Exportación de información</h2>
-  <p>La app puede generar y compartir reportes en PDF cuando tú lo solicitas.</p>
-  <p>El control sobre el archivo exportado depende de dónde decidas guardarlo o compartirlo.</p>
+      <div class="section">
+        <h2>2. Notificaciones</h2>
+        <p>
+          Si activas recordatorios de pago, la app solicita permiso para enviarte notificaciones locales.
+          Puedes desactivarlas en cualquier momento desde la app o desde los ajustes del sistema.
+        </p>
+      </div>
 
-  <h2>5. Seguridad</h2>
-  <p>Tomamos medidas razonables para proteger la información dentro de las capacidades de la plataforma Apple.</p>
+      <div class="section">
+        <h2>3. Compartición de datos</h2>
+        <p>
+          Finanzas Pro no vende tus datos ni los comparte con terceros con fines publicitarios.
+          La app no requiere crear una cuenta propia externa para su uso básico.
+        </p>
+      </div>
 
-  <h2>6. Menores de edad</h2>
-  <p>La app puede usarse por personas mayores de 4 años.</p>
+      <div class="section">
+        <h2>4. Exportación de información</h2>
+        <p>
+          La app puede generar y compartir reportes en PDF cuando tú lo solicitas.
+          El control sobre el uso y destino de esos archivos compartidos depende del usuario.
+        </p>
+      </div>
 
-  <h2>7. Cambios a esta política</h2>
-  <p>Podemos actualizar esta política ocasionalmente. Los cambios se publicarán en esta misma página con su fecha de actualización.</p>
+      <div class="section">
+        <h2>5. Seguridad</h2>
+        <p>
+          Se toman medidas razonables para proteger la información almacenada en la aplicación.
+          Sin embargo, ningún sistema puede garantizar seguridad absoluta.
+        </p>
+      </div>
 
-  <h2>8. Contacto</h2>
-  <p>Si tienes preguntas sobre esta política, puedes contactarnos en: <strong>supportmsapps@icloud.com</strong></p>
+      <div class="section">
+        <h2>6. Cambios a esta política</h2>
+        <p>
+          Esta política de privacidad puede actualizarse en el futuro para reflejar mejoras
+          o cambios en la aplicación. Cualquier modificación relevante se mostrará en esta página.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>7. Contacto</h2>
+        <p>
+          Si tienes dudas sobre esta política de privacidad, puedes escribir a:
+          <a href="mailto:supportmsapps@icloud.com">supportmsapps@icloud.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <p>© 2026 Finanzas Pro. Todos los derechos reservados.</p>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="privacy.html">Privacidad</a>
+          <a href="support.html">Soporte</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
